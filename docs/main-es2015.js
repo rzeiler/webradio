@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<audio #player autoplay controls preload></audio>\r\n<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span class=\"brand\">\r\n      <i class=\"material-icons\">\r\n        radio\r\n      </i>\r\n      webradio\r\n      <small> {{_currentChamel}}</small> </span>\r\n    <div class=\"navbar-hide-small\">\r\n      <mat-slider min=\"0\" max=\"1\" step=\"0.1\" (change)=\"onChange($event)\" [value]=\"_volume\" thumbLabel [disabled]=\"_disabledVolume\"></mat-slider>\r\n      <button mat-raised-button (click)=\"setPlay()\" [disabled]=\"_disabledPlay\">\r\n        Play\r\n        <i class=\"material-icons\" *ngIf=\"_clickedPlay\" >\r\n           play_arrow\r\n        </i>\r\n        <i class=\"material-icons\" *ngIf=\"!_clickedPlay\" >\r\n           pause\r\n        </i>\r\n      </button>\r\n      <button mat-raised-button (click)=\"setStop()\" [disabled]=\"_disabledStop\">\r\n        Stop\r\n        <i class=\"material-icons\">\r\n          stop\r\n        </i>\r\n     </button>\r\n    </div>\r\n    <span class=\"example-spacer\"></span>\r\n    <a mat-raised-button href='https://github.com/rzeiler/webradio' target=\"_blank\">\r\n      Github\r\n      <img alt=\"angular\" height=\"24px\" width=\"24px\" class=\"github-logo\" src=\"/assets/github-circle-white-transparent.svg\">\r\n   </a>\r\n\r\n  </mat-toolbar-row>\r\n  <mat-toolbar-row class=\"navbar-show-small\">\r\n\r\n    <mat-slider min=\"0\" max=\"1\" step=\"0.1\" (change)=\"onChange($event)\" [value]=\"_volume\" thumbLabel [disabled]=\"_disabledVolume\"></mat-slider>\r\n    <button mat-raised-button (click)=\"setPlay()\" [disabled]=\"_disabledPlay\">\r\n      Play\r\n      <i class=\"material-icons\" *ngIf=\"_clickedPlay\" >\r\n         play_arrow\r\n      </i>\r\n      <i class=\"material-icons\" *ngIf=\"!_clickedPlay\" >\r\n         pause\r\n      </i>\r\n    </button>\r\n    <button mat-raised-button (click)=\"setStop()\" [disabled]=\"_disabledStop\">\r\n      Stop\r\n      <i class=\"material-icons\">\r\n        stop\r\n      </i>\r\n   </button>\r\n\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n<mat-tab-group>\r\n  <mat-tab label=\"{{category.name}}\" *ngFor=\"let category of channels\">\r\n    <mat-list>\r\n      <mat-list-item *ngFor=\"let channel of category.channels\" (click)=\"onSelect(channel)\">\r\n        <span class=\"badge\">{{channel.name}}</span>\r\n      </mat-list-item>\r\n    </mat-list>\r\n  </mat-tab>\r\n</mat-tab-group>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<audio #player autoplay controls preload></audio>\r\n<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span class=\"brand\">\r\n      <i class=\"material-icons\">\r\n        radio\r\n      </i>\r\n      webradio\r\n      <small> {{_currentChamel}}</small> </span>\r\n    <div class=\"navbar-hide-small\">\r\n      <mat-slider min=\"0\" max=\"1\" step=\"0.1\" (change)=\"onChange($event)\" [value]=\"_volume\" thumbLabel [disabled]=\"_disabledVolume\"></mat-slider>\r\n      <button mat-raised-button (click)=\"setPlay()\" [disabled]=\"_disabledPlay\">\r\n        Play\r\n        <i class=\"material-icons\" *ngIf=\"_clickedPlay\" >\r\n           play_arrow\r\n        </i>\r\n        <i class=\"material-icons\" *ngIf=\"!_clickedPlay\" >\r\n           pause\r\n        </i>\r\n      </button>\r\n      <button mat-raised-button (click)=\"setStop()\" [disabled]=\"_disabledStop\">\r\n        Stop\r\n        <i class=\"material-icons\">\r\n          stop\r\n        </i>\r\n     </button>\r\n    </div>\r\n    <span class=\"example-spacer\"></span>\r\n    <a mat-raised-button href='https://github.com/rzeiler/webradio' target=\"_blank\">\r\n      Github\r\n      <img alt=\"angular\" height=\"24px\" width=\"24px\" class=\"github-logo\" src=\"assets/github-circle-white-transparent.svg\">\r\n   </a>\r\n\r\n  </mat-toolbar-row>\r\n  <mat-toolbar-row class=\"navbar-show-small\">\r\n\r\n    <mat-slider min=\"0\" max=\"1\" step=\"0.1\" (change)=\"onChange($event)\" [value]=\"_volume\" thumbLabel [disabled]=\"_disabledVolume\"></mat-slider>\r\n    <button mat-raised-button (click)=\"setPlay()\" [disabled]=\"_disabledPlay\">\r\n      Play\r\n      <i class=\"material-icons\" *ngIf=\"_clickedPlay\" >\r\n         play_arrow\r\n      </i>\r\n      <i class=\"material-icons\" *ngIf=\"!_clickedPlay\" >\r\n         pause\r\n      </i>\r\n    </button>\r\n    <button mat-raised-button (click)=\"setStop()\" [disabled]=\"_disabledStop\">\r\n      Stop\r\n      <i class=\"material-icons\">\r\n        stop\r\n      </i>\r\n   </button>\r\n\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n<mat-tab-group>\r\n  <mat-tab label=\"{{category.name}}\" *ngFor=\"let category of channels\">\r\n    <mat-list>\r\n      <mat-list-item matTooltip=\"{{channel.url}}\" *ngFor=\"let channel of category.channels\" (click)=\"onSelect(channel)\">\r\n        <span  class=\"badge\">{{channel.name}}</span>\r\n      </mat-list-item>\r\n    </mat-list>\r\n  </mat-tab>\r\n</mat-tab-group>\r\n");
 
 /***/ }),
 
@@ -322,16 +322,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _player_player_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./player/player.component */ "./src/app/player/player.component.ts");
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
-/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm2015/list.js");
-/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm2015/tabs.js");
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm2015/toolbar.js");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm2015/button.js");
-/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/slider */ "./node_modules/@angular/material/esm2015/slider.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _player_player_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./player/player.component */ "./src/app/player/player.component.ts");
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm2015/list.js");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm2015/tabs.js");
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm2015/toolbar.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm2015/button.js");
+/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/slider */ "./node_modules/@angular/material/esm2015/slider.js");
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/tooltip */ "./node_modules/@angular/material/esm2015/tooltip.js");
+
+
 
 
 
@@ -350,21 +354,23 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-            _player_player_component__WEBPACK_IMPORTED_MODULE_4__["PlayerComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+            _player_player_component__WEBPACK_IMPORTED_MODULE_5__["PlayerComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _angular_service_worker__WEBPACK_IMPORTED_MODULE_5__["ServiceWorkerModule"].register('ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].production }),
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
-            _angular_material_list__WEBPACK_IMPORTED_MODULE_8__["MatListModule"],
-            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_9__["MatTabsModule"],
-            _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_10__["MatToolbarModule"],
-            _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButtonModule"],
-            _angular_material_slider__WEBPACK_IMPORTED_MODULE_12__["MatSliderModule"],
+            _angular_service_worker__WEBPACK_IMPORTED_MODULE_6__["ServiceWorkerModule"].register('ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].production }),
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__["BrowserAnimationsModule"],
+            _angular_material_list__WEBPACK_IMPORTED_MODULE_9__["MatListModule"],
+            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_10__["MatTabsModule"],
+            _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_11__["MatToolbarModule"],
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"],
+            _angular_material_slider__WEBPACK_IMPORTED_MODULE_13__["MatSliderModule"],
+            _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_14__["MatTooltipModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
         ],
         providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })
 ], AppModule);
 
@@ -386,12 +392,24 @@ __webpack_require__.r(__webpack_exports__);
 
 const categories = [
     {
+        name: "Dubstep / DRUM AND BASS", channels: [
+            { name: "PARTY VIBE RADIO Dubstep", url: "http://www.partyviberadio.com:8040/;listen.pls?sid=1" },
+            { name: "PARTY VIBE RADIO DRUM AND BASS", url: "http://www.partyviberadio.com:8004/;listen.pls?sid=1" },
+            { name: "JR.FM Dubstep Radio", url: "http://149.56.157.81:8431/;" },
+            { name: "Radio Studio Souto", url: "http://192.99.150.31:9083/;stream/1" }
+        ]
+    },
+    {
         name: "Electro", channels: [
             { name: "Chicago Discovertrance", url: "http://chicago.discovertrance.com:9216/;" },
-            { name: "Rinse Radio", url: "http://streamer.dgen.net:8000/rinseradio" },
+            { name: "PARTY VIBE RADIO TECHNO", url: "http://www.partyviberadio.com:8046/;listen.pls?sid=1" },
+            { name: "PulseEDM Dance Music Radio", url: "http://pulseedm.cdnstream1.com:8124/1373_128" },
+            { name: "Sunshine Live 2000er", url: "https://stream.sunshine-live.de/2000er/mp3-192/stream.sunshine-live.de/" },
+            { name: "Amsterdam Dance Event - Club", url: "https://stream.sunshine-live.de/ade18club/mp3-192/stream.sunshine-live.de/" },
             { name: "Electro Radio (Schweiz)", url: "http://stream.electroradio.fm/stream" },
             { name: "TECHNO4EVER.FM", url: "http://relay01.t4e.dj/main_low.mp3" },
             { name: "DASDING", url: "http://swr-dasding-live.cast.addradio.de/swr/dasding/live/mp3/128/stream.mp3" },
+            { name: 'dubbase.fm', url: 'http://stream.dubbase.fm:7004/;stream.mp3' },
             { name: "CLUBMIX", url: "http://tuner.m1.fm/clubmix.mp3" },
             { name: "SomaFM - Groove Salad", url: "http://ice1.somafm.com/groovesalad-128-mp3" },
             { name: "SomaFM - Space Station", url: "http://ice1.somafm.com/spacestation-128-mp3" }
@@ -452,20 +470,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _channels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../channels */ "./src/app/channels.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 
 
 let PlayerComponent = class PlayerComponent {
-    constructor() {
+    constructor(http) {
+        this.http = http;
+        this.httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+                'Access-Control-Allow-Origin': '*',
+                "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT",
+                'Vary': 'Origin'
+            })
+        };
         this._disabledVolume = true;
         this._disabledPlay = true;
         this._disabledStop = true;
         this._currentChamel = "";
         this._clickedPlay = false;
-        this._volume = 0.5;
+        this._volume = 0.8;
+        this._interval = null;
+        this._intervalStep = null;
+        this._intervalTemp = null;
         this.channels = _channels__WEBPACK_IMPORTED_MODULE_2__["categories"];
     }
     ngOnInit() {
+        // this.channels.forEach(category => {
+        //   // console.log(category);
+        //   category.channels.forEach(channel => {
+        //     this.http.head(channel.url, this.httpOptions).subscribe(succ => console.log('succ', succ), error => console.log('error', error));
+        //     //console.log(channel);
+        //   });
+        // });
         this._player.nativeElement.volume = this._volume;
     }
     onSelect(cannel) {
@@ -476,6 +514,18 @@ let PlayerComponent = class PlayerComponent {
         this._clickedPlay = true;
         this._currentChamel = cannel.name;
         document.title = "webradio - " + cannel.name;
+        this.animateTitle();
+    }
+    animateTitle() {
+        this._intervalTemp = document.title;
+        this._intervalStep = 0;
+        this._interval = setInterval(() => {
+            if ((this._intervalStep + 1) >= this._intervalTemp.length)
+                this._intervalStep = 0;
+            document.title = this._intervalTemp.substring(this._intervalStep);
+            document.title += " " + this._intervalTemp.replace(document.title, '');
+            this._intervalStep++;
+        }, 500);
     }
     setPlay() {
         this._clickedPlay = !this._clickedPlay;
@@ -487,6 +537,8 @@ let PlayerComponent = class PlayerComponent {
         }
     }
     setStop() {
+        clearInterval(this._interval);
+        document.title = this._intervalTemp;
         this._clickedPlay = false;
         this._player.nativeElement.pause();
         this._player.nativeElement.currentTime = 0;
@@ -496,6 +548,9 @@ let PlayerComponent = class PlayerComponent {
         this._player.nativeElement.volume = event.value;
     }
 };
+PlayerComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('player', null)
 ], PlayerComponent.prototype, "_player", void 0);

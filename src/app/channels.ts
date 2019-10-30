@@ -1,12 +1,24 @@
 
 export const categories = [
   {
+    name: "Dubstep / DRUM AND BASS", channels: [
+      { name: "PARTY VIBE RADIO Dubstep", url: "http://www.partyviberadio.com:8040/;listen.pls?sid=1" },
+      { name: "PARTY VIBE RADIO DRUM AND BASS", url: "http://www.partyviberadio.com:8004/;listen.pls?sid=1" },
+      { name: "JR.FM Dubstep Radio", url: "http://149.56.157.81:8431/;" },
+      { name: "Radio Studio Souto", url: "http://192.99.150.31:9083/;stream/1" }
+    ]
+  },
+  {
     name: "Electro", channels: [
       { name: "Chicago Discovertrance", url: "http://chicago.discovertrance.com:9216/;" },
-      { name: "Rinse Radio", url: "http://streamer.dgen.net:8000/rinseradio" },
+      { name: "PARTY VIBE RADIO TECHNO", url: "http://www.partyviberadio.com:8046/;listen.pls?sid=1" },
+      { name: "PulseEDM Dance Music Radio", url: "http://pulseedm.cdnstream1.com:8124/1373_128" },
+      { name: "Sunshine Live 2000er", url: "https://stream.sunshine-live.de/2000er/mp3-192/stream.sunshine-live.de/" },
+      { name: "Amsterdam Dance Event - Club", url: "https://stream.sunshine-live.de/ade18club/mp3-192/stream.sunshine-live.de/" },
       { name: "Electro Radio (Schweiz)", url: "http://stream.electroradio.fm/stream" },
       { name: "TECHNO4EVER.FM", url: "http://relay01.t4e.dj/main_low.mp3" },
       { name: "DASDING", url: "http://swr-dasding-live.cast.addradio.de/swr/dasding/live/mp3/128/stream.mp3" },
+      { name: 'dubbase.fm', url: 'http://stream.dubbase.fm:7004/;stream.mp3' },
       { name: "CLUBMIX", url: "http://tuner.m1.fm/clubmix.mp3" },
       { name: "SomaFM - Groove Salad", url: "http://ice1.somafm.com/groovesalad-128-mp3" },
       { name: "SomaFM - Space Station", url: "http://ice1.somafm.com/spacestation-128-mp3" }

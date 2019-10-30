@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { categories } from '../channels';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -12,23 +12,39 @@ export class PlayerComponent implements OnInit {
 
   @ViewChild('player', null) _player: ElementRef;
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT",
+      'Vary': 'Origin'
+    })
+  };
+
   _disabledVolume: boolean = true;
   _disabledPlay: boolean = true;
   _disabledStop: boolean = true;
 
   _currentChamel: string = "";
   _clickedPlay: boolean = false;
-  _volume: number = 0.5;
+  _volume: number = 0.8;
+
+  _interval = null;
+  _intervalStep: number = null;
+  _intervalTemp: string = null;
 
   channels = categories;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit() { 
-
-
+  ngOnInit() {
+    // this.channels.forEach(category => {
+    //   // console.log(category);
+    //   category.channels.forEach(channel => {
+    //     this.http.head(channel.url, this.httpOptions).subscribe(succ => console.log('succ', succ), error => console.log('error', error));
+    //     //console.log(channel);
+    //   });
+    // });
     this._player.nativeElement.volume = this._volume;
-
   }
 
   onSelect(cannel) {
@@ -39,6 +55,19 @@ export class PlayerComponent implements OnInit {
     this._clickedPlay = true;
     this._currentChamel = cannel.name;
     document.title = "webradio - " + cannel.name;
+    this.animateTitle();
+  }
+
+  animateTitle() {
+    this._intervalTemp = document.title;
+    this._intervalStep = 0;
+    this._interval = setInterval(() => {
+      if ((this._intervalStep + 1) >= this._intervalTemp.length)
+        this._intervalStep = 0;
+      document.title = this._intervalTemp.substring(this._intervalStep);
+      document.title += " " + this._intervalTemp.replace(document.title, '');
+      this._intervalStep++;
+    }, 500)
   }
 
   setPlay() {
@@ -51,11 +80,12 @@ export class PlayerComponent implements OnInit {
   }
 
   setStop() {
+    clearInterval(this._interval);
+    document.title = this._intervalTemp;
     this._clickedPlay = false;
     this._player.nativeElement.pause();
     this._player.nativeElement.currentTime = 0;
   }
-
 
   onChange(event) {
     this._volume = event.value;

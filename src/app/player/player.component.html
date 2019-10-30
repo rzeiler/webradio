@@ -28,7 +28,7 @@
     <span class="example-spacer"></span>
     <a mat-raised-button href='https://github.com/rzeiler/webradio' target="_blank">
       Github
-      <img alt="angular" height="24px" width="24px" class="github-logo" src="/assets/github-circle-white-transparent.svg">
+      <img alt="angular" height="24px" width="24px" class="github-logo" src="assets/github-circle-white-transparent.svg">
    </a>
 
   </mat-toolbar-row>
@@ -56,8 +56,8 @@
 <mat-tab-group>
   <mat-tab label="{{category.name}}" *ngFor="let category of channels">
     <mat-list>
-      <mat-list-item *ngFor="let channel of category.channels" (click)="onSelect(channel)">
-        <span class="badge">{{channel.name}}</span>
+      <mat-list-item matTooltip="{{channel.url}}" *ngFor="let channel of category.channels" (click)="onSelect(channel)">
+        <span  class="badge">{{channel.name}}</span>
       </mat-list-item>
     </mat-list>
   </mat-tab>
