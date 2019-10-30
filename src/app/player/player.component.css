@@ -1,0 +1,54 @@
+audio {
+  display: none;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-raised-button {
+  margin-left: 5px;
+}
+
+.navbar-hide-small {
+  display: flex;
+}
+
+.navbar-show-small {
+  display: none;
+}
+
+.github-logo {
+  margin: 12px 0px 12px 6px;
+  vertical-align: middle;
+}
+
+.brand {
+  font-size: 120%;
+}
+
+.brand small {
+  font-size: 60%;
+}
+
+.brand .material-icons {
+  font-size: 90%;
+  line-height: 120%;
+}
+
+.mat-list-item {
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .navbar-hide-small {
+    display: none;
+  }
+  .navbar-show-small {
+    display: flex;
+  }
+  .navbar-show-small mat-slider, .navbar-show-small button {
+    text-decoration: inherit;
+    flex: 1;
+  }
+}
