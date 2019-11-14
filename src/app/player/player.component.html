@@ -1,15 +1,15 @@
 <audio #player autoplay controls preload></audio>
 <mat-toolbar>
-  <mat-toolbar-row>
-    <span class="brand">
+    <mat-toolbar-row>
+        <span class="brand">
       <i class="material-icons">
         radio
       </i>
       webradio
       <small> {{_currentChamel}}</small> </span>
-    <div class="navbar-hide-small">
-      <mat-slider min="0" max="1" step="0.1" (change)="onChange($event)" [value]="_volume" thumbLabel [disabled]="_disabledVolume"></mat-slider>
-      <button mat-raised-button (click)="setPlay()" [disabled]="_disabledPlay">
+        <div class="navbar-hide-small">
+            <mat-slider min="0" max="1" step="0.1" (change)="onChange($event)" [value]="_volume" thumbLabel [disabled]="_disabledVolume"></mat-slider>
+            <button mat-raised-button (click)="setPlay()" [disabled]="_disabledPlay">
         Play
         <i class="material-icons" *ngIf="_clickedPlay" >
            play_arrow
@@ -18,24 +18,24 @@
            pause
         </i>
       </button>
-      <button mat-raised-button (click)="setStop()" [disabled]="_disabledStop">
+            <button mat-raised-button (click)="setStop()" [disabled]="_disabledStop">
         Stop
         <i class="material-icons">
           stop
         </i>
      </button>
-    </div>
-    <span class="example-spacer"></span>
-    <a mat-raised-button href='https://github.com/rzeiler/webradio' target="_blank">
+        </div>
+        <span class="example-spacer"></span>
+        <a mat-raised-button href='https://github.com/rzeiler/webradio' target="_blank">
       Github
       <img alt="angular" height="24px" width="24px" class="github-logo" src="assets/github-circle-white-transparent.svg">
    </a>
 
-  </mat-toolbar-row>
-  <mat-toolbar-row class="navbar-show-small">
+    </mat-toolbar-row>
+    <mat-toolbar-row class="navbar-show-small">
 
-    <mat-slider min="0" max="1" step="0.1" (change)="onChange($event)" [value]="_volume" thumbLabel [disabled]="_disabledVolume"></mat-slider>
-    <button mat-raised-button (click)="setPlay()" [disabled]="_disabledPlay">
+        <mat-slider min="0" max="1" step="0.1" (change)="onChange($event)" [value]="_volume" thumbLabel [disabled]="_disabledVolume"></mat-slider>
+        <button mat-raised-button (click)="setPlay()" [disabled]="_disabledPlay">
       Play
       <i class="material-icons" *ngIf="_clickedPlay" >
          play_arrow
@@ -44,21 +44,24 @@
          pause
       </i>
     </button>
-    <button mat-raised-button (click)="setStop()" [disabled]="_disabledStop">
+        <button mat-raised-button (click)="setStop()" [disabled]="_disabledStop">
       Stop
       <i class="material-icons">
         stop
       </i>
    </button>
 
-  </mat-toolbar-row>
+    </mat-toolbar-row>
 </mat-toolbar>
 <mat-tab-group>
-  <mat-tab label="{{category.name}}" *ngFor="let category of channels">
-    <mat-list>
-      <mat-list-item matTooltip="{{channel.url}}" *ngFor="let channel of category.channels" (click)="onSelect(channel)">
-        <span  class="badge">{{channel.name}}</span>
-      </mat-list-item>
-    </mat-list>
-  </mat-tab>
+    <mat-tab label="{{category.name}}" *ngFor="let category of channels">
+        <mat-selection-list (selectionChange)="handleSelection($event)">
+            <mat-list-option color="warn" matTooltip="{{channel.url}}" [value]="channel" *ngFor="let channel of category.channels">
+                <h3 matLine> {{channel.name}} </h3>
+                <p matLine class="info">Location: {{channel.location}}</p>
+                <p matLine class="info">City: {{channel.city}}</p>
+                <p matLine class="streamurl">Url: {{channel.url}}</p>
+            </mat-list-option>
+        </mat-selection-list>
+    </mat-tab>
 </mat-tab-group>
