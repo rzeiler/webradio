@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1573732299946,
+  "timestamp": 1573732594278,
   "index": "docs/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,6 @@
         "docs/index.html",
         "docs/main-es2015.695fb6bf5c678e2d4f30.js",
         "docs/main-es5.695fb6bf5c678e2d4f30.js",
-        "docs/manifest.json",
         "docs/polyfills-es2015.0ef207fb7b4761464817.js",
         "docs/polyfills-es5.2b9ce34c123ac007a8ba.js",
         "docs/runtime-es2015.e8a2810b3b08d6a1b6aa.js",
@@ -53,10 +52,9 @@
     "docs/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "docs/assets/radio.png": "e755d3e4cfa3e5a91a0c59650c8aa16b2e5074c4",
     "docs/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "docs/index.html": "76cf7c366c32b4d649bbfb4f36b94920b34be4bb",
+    "docs/index.html": "16d49c13b6231e6fb860a65db82119aa9fd69448",
     "docs/main-es2015.695fb6bf5c678e2d4f30.js": "37aa404a20df19e7f02c593a6c6a152fb6225c0e",
     "docs/main-es5.695fb6bf5c678e2d4f30.js": "4338a3eb20c952cc237cd64bf54726147bc4998a",
-    "docs/manifest.json": "cb03adff0e157bad4aa99913994ef1d30a70223f",
     "docs/polyfills-es2015.0ef207fb7b4761464817.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "docs/polyfills-es5.2b9ce34c123ac007a8ba.js": "45c51483238468881240579c3fdecd19144cff17",
     "docs/runtime-es2015.e8a2810b3b08d6a1b6aa.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
