@@ -69,15 +69,15 @@ audio {
     margin: 1vh;
 }
 
-.truncate {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .streamurl.mat-line {
     padding-top: 10px !important;
     font-size: 70% !important;
     color: #aaa;
+}
+
+.currentChannel {
+    margin-left: 10px;
+    color: #c2185b;
+    font-size: 110%;
+    overflow: hidden;
 }

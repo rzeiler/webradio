@@ -2,6 +2,14 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { categories } from '../channels';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatSelectionList, MatSelectionListChange, MatListOption } from '@angular/material/list';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BehaviorSubject, Observable } from 'rxjs';
+import LocalStorageDB from 'local-storage-db';
+import { Channel } from '../models/channel';
+import { Tab } from '../models/tab';
+import { Settings } from '../models/settings';
+import { MatTabGroup } from '@angular/material/tabs';
+import { Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,20 +20,17 @@ import { MatSelectionList, MatSelectionListChange, MatListOption } from '@angula
 export class PlayerComponent implements OnInit {
 
   @ViewChild('player', null) _player: ElementRef;
+  @ViewChild('tabGroup', null) tabGroup;
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Access-Control-Allow-Origin': '*',
-      "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT",
-      'Vary': 'Origin'
-    })
-  };
+  _showGithub: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   _disabledVolume: boolean = true;
   _disabledPlay: boolean = true;
   _disabledStop: boolean = true;
 
-  _currentChamel: string = "";
+  _currentChannel: Channel = new Channel();
+
+  _currentChannelDisplay: string = "";
   _clickedPlay: boolean = false;
   _volume: number = 0.8;
 
@@ -36,10 +41,17 @@ export class PlayerComponent implements OnInit {
   _MatSelectionList: MatSelectionList = null;
   _MatListOption: MatListOption = null;
 
-  channels = categories;
+  data: Tab[];
+  settings: Settings;
 
-
-  constructor(private http: HttpClient) { }
+  constructor(breakpointObserver: BreakpointObserver, public meta: Meta) {
+    breakpointObserver.observe([
+      Breakpoints.Web,
+      Breakpoints.TabletLandscape
+    ]).subscribe(result => {
+      this._showGithub.next(result.matches);
+    });
+  }
 
   handleSelection(event: MatSelectionListChange) {
     this._MatSelectionList = event.source;
@@ -53,10 +65,35 @@ export class PlayerComponent implements OnInit {
     } else {
       this.setStop();
     }
-
   }
 
+  getLocation(href:string) {
+    var l = document.createElement("a");
+    l.href = href;
+    return l;
+  };
+
   ngOnInit() {
+    /* open db */
+    const db = new LocalStorageDB('webradio');
+    /* is set */
+    let _categories = db.get('categories');
+    let _settings = db.get('settings');
+
+    if (_settings === undefined) {
+      db.create('settings', { tab: 0, volume: 0.7 });
+    }
+
+    if (_categories === undefined) {
+      db.create('categories', categories as Tab[]);
+    }
+    /* get */
+    this.data = db.get('categories') as Tab[];
+    this.settings = db.get('settings') as Settings
+    /* set default value */
+    this._volume = this.settings.volume;
+    this.tabGroup.selectedIndex = this.settings.tab;
+
     this._player.nativeElement.volume = this._volume;
   }
 
@@ -67,12 +104,39 @@ export class PlayerComponent implements OnInit {
     this._disabledPlay = false;
     this._player.nativeElement.src = cannel.url;
     this._clickedPlay = true;
-    this._currentChamel = cannel.name;
+    this._currentChannel = cannel;
     document.title = "webradio - " + cannel.name;
     this.animateTitle();
+
+    var l = this.getLocation(cannel.url) ;
+ 
+     this.meta.updateTag({ "http-equiv": 'Content-Security-Policy', content: `media-src ${l.protocol}//${l.host}` });
+
+    /* set local db */
+    let currentTabIndex: number = 0;
+    this.data.forEach((tab: Tab, i: number) => {
+      tab.channels.forEach((_cannel: Channel) => {
+        if (_cannel.name == cannel.name) {
+          currentTabIndex = i;
+          if (_cannel.clicked === null)
+            _cannel.clicked = 0;
+          _cannel.clicked++;
+        }
+      });
+    });
+    this.settings.tab = currentTabIndex;
+    /* open and update db */
+    const db = new LocalStorageDB('webradio');
+    db.update(this.data, 'categories');
+    db.update(this.settings, 'settings');
   }
 
   animateTitle() {
+    const self = this;
+    let text = `${self._currentChannel.name} - ${self._currentChannel.location} - ${self._currentChannel.city} - `;
+    self._currentChannelDisplay = text;
+    let _displTemp = text;
+    let _displStep = 0;
     this._intervalTemp = document.title;
     this._intervalStep = 0;
     this._interval = setInterval(() => {
@@ -81,14 +145,19 @@ export class PlayerComponent implements OnInit {
       document.title = this._intervalTemp.substring(this._intervalStep);
       document.title += " " + this._intervalTemp.replace(document.title, '');
       this._intervalStep++;
-    }, 500)
+      if ((_displStep + 1) >= _displTemp.length)
+        _displStep = 0;
+      self._currentChannelDisplay = text.substring(_displStep);
+      self._currentChannelDisplay += text.replace(self._currentChannelDisplay, '');
+      _displStep++;
+    }, 300)
   }
 
   setPlay() {
     if (this._MatListOption != null)
       this._MatListOption._setSelected(true);
 
-      this._clickedPlay = !this._clickedPlay;
+    this._clickedPlay = !this._clickedPlay;
     if (this._clickedPlay) {
       this._player.nativeElement.play();
     } else {
@@ -101,15 +170,21 @@ export class PlayerComponent implements OnInit {
       this._MatSelectionList.deselectAll();
 
     clearInterval(this._interval);
-    document.title = this._intervalTemp;
+    document.title = "webradio";
+    this._currentChannelDisplay = "";
     this._clickedPlay = false;
     this._player.nativeElement.pause();
     this._player.nativeElement.currentTime = 0;
+
   }
 
   onChange(event) {
     this._volume = event.value;
     this._player.nativeElement.volume = event.value;
+    /* open and update db */
+    this.settings.volume = this._volume;
+    const db = new LocalStorageDB('webradio');
+    db.update(this.settings, 'settings');
   }
 
 }
