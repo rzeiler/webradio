@@ -1,14 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { categories } from '../channels';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { categories } from '../channels.json';
 import { MatSelectionList, MatSelectionListChange, MatListOption } from '@angular/material/list';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import LocalStorageDB from 'local-storage-db';
 import { Channel } from '../models/channel';
 import { Tab } from '../models/tab';
 import { Settings } from '../models/settings';
-import { MatTabGroup } from '@angular/material/tabs';
 import { Meta } from '@angular/platform-browser';
 
 
@@ -108,10 +106,8 @@ export class PlayerComponent implements OnInit {
     document.title = "webradio - " + cannel.name;
     this.animateTitle();
 
-    var l = this.getLocation(cannel.url) ;
- 
-     this.meta.updateTag({ "http-equiv": 'Content-Security-Policy', content: `media-src ${l.protocol}//${l.host}` });
-
+     
+  
     /* set local db */
     let currentTabIndex: number = 0;
     this.data.forEach((tab: Tab, i: number) => {
