@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { categories } from '../channels.json';
+import { categories } from '../channels';
 import { MatSelectionList, MatSelectionListChange, MatListOption } from '@angular/material/list';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { BehaviorSubject } from 'rxjs';

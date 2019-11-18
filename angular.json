@@ -13,7 +13,6 @@
                 "build": {
                     "builder": "@angular-builders/custom-webpack:browser",
                     "options": {
-                        "indexTransform": "./index-html-transform.js",
                         "outputPath": "docs",
                         "index": "src/index.html",
                         "main": "src/main.ts",

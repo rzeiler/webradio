@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1573877565205,
+  "timestamp": 1574115854947,
   "index": "/webradio/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/webradio/favicon.ico",
         "/webradio/index.html",
-        "/webradio/main-es2015.6955a3ca69d75c6730b8.js",
-        "/webradio/main-es5.6955a3ca69d75c6730b8.js",
+        "/webradio/main-es2015.475184cfe2c71c09ed3d.js",
+        "/webradio/main-es5.475184cfe2c71c09ed3d.js",
         "/webradio/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/webradio/polyfills-es5.ef4b1e1fc703b3ff76e3.js",
         "/webradio/runtime-es2015.edb2fcf2778e7bf1d426.js",
@@ -68,9 +68,9 @@
     "/webradio/assets/icons/icon-96x96.png": "30f7293f12eb195e6101e3d53d46d1c135a79d5a",
     "/webradio/assets/radio.svg": "3f84575e32a1dffa80ae37b14411046f8733548e",
     "/webradio/favicon.ico": "0924d44454b724431b99f41ab76d392054da924e",
-    "/webradio/index.html": "cbc43ff52916fcd3cc5d9b423a4a1926d1420782",
-    "/webradio/main-es2015.6955a3ca69d75c6730b8.js": "ab15adef8258718fdb338151d5ad383ab20d1737",
-    "/webradio/main-es5.6955a3ca69d75c6730b8.js": "cf49c33998fcb8e9916dbff713ca5639f53e5f90",
+    "/webradio/index.html": "3337f92df117d95949abd4cfbc0880a70a40390c",
+    "/webradio/main-es2015.475184cfe2c71c09ed3d.js": "3a8cbd68c463b6b1796e9482fdc7648e713be0a5",
+    "/webradio/main-es5.475184cfe2c71c09ed3d.js": "81283f05cb44103d10eb18fe3b70a99d4df47de0",
     "/webradio/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/webradio/polyfills-es5.ef4b1e1fc703b3ff76e3.js": "45c51483238468881240579c3fdecd19144cff17",
     "/webradio/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
