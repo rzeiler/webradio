@@ -1,5 +1,4 @@
 var request = require('sync-request');
-var path = require('path');
 var fs = require('fs');
 var Url = require('url-parse');
 var config = "export const categories = [";
@@ -8,9 +7,9 @@ var exists = fs.existsSync(filename);
 if (exists)
     fs.unlinkSync(filename);
 
-let contentpolice = '';
-
-let jsonData = JSON.parse(fs.readFileSync('./channels.json', 'utf-8'))
+/* wird nicht mehr benötigt */
+//var contentpolice = '';
+var jsonData = JSON.parse(fs.readFileSync('./channels.json', 'utf-8'))
 jsonData.categories.forEach(a => {
     if (config != "export const categories = [") {
         config += `,{ \n`;
@@ -39,33 +38,32 @@ jsonData.categories.forEach(a => {
             var user = JSON.parse(res.getBody('utf8'));
             config += `     "location":"${user.country_name}",\n`;
             config += `     'city':'${user.city || user.time_zone}',\n`;
-            console.log("getBody", user);
         } catch (error) {
 
         }
-        var tu = ` ${url.protocol}//${url.host}/*`;
-        if (contentpolice.indexOf(tu) == -1)
-            contentpolice += tu;
+        // var tu = ` ${url.protocol}//${url.host}/*`;
+        // if (contentpolice.indexOf(tu) == -1)
+        //     contentpolice += tu;
         config += "  }";
     });
     config += "\n   ]}";
 });
 config += "];"
-contentpolice = `<meta http-equiv="Content-Security-Policy" content="script-src 'self' media-src${contentpolice}">`
-fs.writeFile(filename, config, function(err) {
+//contentpolice = `<meta http-equiv="Content-Security-Policy" content="script-src 'self' media-src${contentpolice}">`
+fs.writeFile(filename, config, function (err) {
     if (err) throw err;
     console.log('Saved!');
 });
-var someFile = 'src/index.html';
-fs.readFile(someFile, 'utf8', function(err, indexHtml) {
-    if (err) {
-        return console.log(err);
-    }
-    var lookfor = '<meta http-equiv="Content-Security-Policy"';
-    const start = indexHtml.indexOf(lookfor);
-    const end = indexHtml.indexOf('</head>');
-    var result = `${indexHtml.slice(0, start)} ${contentpolice} \n ${indexHtml.slice(end)}`
-    fs.writeFile(someFile, result, 'utf8', function(err) {
-        if (err) return console.log(err);
-    });
-});
+// var someFile = 'src/index.html';
+// fs.readFile(someFile, 'utf8', function(err, indexHtml) {
+//     if (err) {
+//         return console.log(err);
+//     }
+//     var lookfor = '<meta http-equiv="Content-Security-Policy"';
+//     const start = indexHtml.indexOf(lookfor);
+//     const end = indexHtml.indexOf('</head>');
+//     var result = `${indexHtml.slice(0, start)} ${contentpolice} \n ${indexHtml.slice(end)}`
+//     fs.writeFile(someFile, result, 'utf8', function(err) {
+//         if (err) return console.log(err);
+//     });
+// });
