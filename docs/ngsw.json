@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1574160840982,
+  "timestamp": 1574157501228,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -8,10 +8,15 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
+        "/MaterialIcons-Regular.012cf6a10129e2275d79.woff",
+        "/MaterialIcons-Regular.570eb83859dc23dd0eec.woff2",
+        "/MaterialIcons-Regular.a37b0c01c0baf1888ca8.ttf",
+        "/MaterialIcons-Regular.e79bfd88537def476913.eot",
         "/favicon.ico",
         "/index.html",
         "/main-es2015.475184cfe2c71c09ed3d.js",
         "/main-es5.475184cfe2c71c09ed3d.js",
+        "/manifest.webmanifest",
         "/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/polyfills-es5.ef4b1e1fc703b3ff76e3.js",
         "/runtime-es2015.edb2fcf2778e7bf1d426.js",
@@ -25,10 +30,6 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "/MaterialIcons-Regular.012cf6a10129e2275d79.woff",
-        "/MaterialIcons-Regular.570eb83859dc23dd0eec.woff2",
-        "/MaterialIcons-Regular.a37b0c01c0baf1888ca8.ttf",
-        "/MaterialIcons-Regular.e79bfd88537def476913.eot",
         "/assets/fonts/MaterialIcons-Regular.eot",
         "/assets/fonts/MaterialIcons-Regular.ttf",
         "/assets/fonts/MaterialIcons-Regular.woff",
@@ -68,9 +69,10 @@
     "/assets/icons/icon-96x96.png": "30f7293f12eb195e6101e3d53d46d1c135a79d5a",
     "/assets/radio.svg": "3f84575e32a1dffa80ae37b14411046f8733548e",
     "/favicon.ico": "0924d44454b724431b99f41ab76d392054da924e",
-    "/index.html": "7073559af3d3b9524f0d01dbcbeb6e8cfa01ea9a",
+    "/index.html": "fd2d4a4bf78109e8c1b502f67d393140f2cb66d9",
     "/main-es2015.475184cfe2c71c09ed3d.js": "3a8cbd68c463b6b1796e9482fdc7648e713be0a5",
     "/main-es5.475184cfe2c71c09ed3d.js": "81283f05cb44103d10eb18fe3b70a99d4df47de0",
+    "/manifest.webmanifest": "2898034fe53e3ea9aebae905c2a6fbb54d367a7a",
     "/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/polyfills-es5.ef4b1e1fc703b3ff76e3.js": "45c51483238468881240579c3fdecd19144cff17",
     "/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
