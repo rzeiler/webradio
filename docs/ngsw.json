@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1574277132012,
+  "timestamp": 1574277990748,
   "index": "/webradio/index.html",
   "assetGroups": [
     {
@@ -15,9 +15,9 @@
         "/webradio/manifest.json",
         "/webradio/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/webradio/polyfills-es5.ef4b1e1fc703b3ff76e3.js",
-        "/webradio/runtime-es2015.5bc7d4ba2ec867b6b1d4.js",
-        "/webradio/runtime-es5.5bc7d4ba2ec867b6b1d4.js",
-        "/webradio/styles.ad3ded0e941ea974d116.css"
+        "/webradio/runtime-es2015.edb2fcf2778e7bf1d426.js",
+        "/webradio/runtime-es5.edb2fcf2778e7bf1d426.js",
+        "/webradio/styles.beb7796a0fdf6d8f20e8.css"
       ],
       "patterns": []
     },
@@ -63,15 +63,15 @@
     "/webradio/assets/icons/icon-96x96.png": "0af6115897eced5097275051a563c336651174e4",
     "/webradio/assets/radio.svg": "3f84575e32a1dffa80ae37b14411046f8733548e",
     "/webradio/favicon.ico": "99dc8360c842cbbc5fdde06838b4779f5552b134",
-    "/webradio/index.html": "f586f776e4e5f4837797386e3ffc8bcf66bc3eaf",
+    "/webradio/index.html": "36c34e0dfc161099b9b67710d554d42a69320cf4",
     "/webradio/main-es2015.414da8732f2aaf0d899d.js": "3a8cbd68c463b6b1796e9482fdc7648e713be0a5",
     "/webradio/main-es5.414da8732f2aaf0d899d.js": "81283f05cb44103d10eb18fe3b70a99d4df47de0",
     "/webradio/manifest.json": "71d728ddfdb3737d2cf5a65faf944acc806663c1",
     "/webradio/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/webradio/polyfills-es5.ef4b1e1fc703b3ff76e3.js": "45c51483238468881240579c3fdecd19144cff17",
-    "/webradio/runtime-es2015.5bc7d4ba2ec867b6b1d4.js": "51839941edd883a4c1dbd4ecb4958b8eba08f766",
-    "/webradio/runtime-es5.5bc7d4ba2ec867b6b1d4.js": "51839941edd883a4c1dbd4ecb4958b8eba08f766",
-    "/webradio/styles.ad3ded0e941ea974d116.css": "20ece0aaa67f2d9df2608e8fc5037e281dd9e4ac"
+    "/webradio/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/webradio/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/webradio/styles.beb7796a0fdf6d8f20e8.css": "e93668aafb53fe93e05fe54811b1ec0155dbf338"
   },
   "navigationUrls": [
     {
