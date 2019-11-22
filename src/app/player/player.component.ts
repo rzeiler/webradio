@@ -10,12 +10,16 @@ import { Settings } from '../models/settings';
 import { Meta } from '@angular/platform-browser';
 
 
+
+
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
+
+  SWIPE_ACTION = { UP: 'swipeup', DOWN: 'swipedown' };
 
   @ViewChild('player', null) _player: ElementRef;
   @ViewChild('tabGroup', null) tabGroup;
@@ -65,7 +69,7 @@ export class PlayerComponent implements OnInit {
     }
   }
 
-  getLocation(href:string) {
+  getLocation(href: string) {
     var l = document.createElement("a");
     l.href = href;
     return l;
@@ -106,8 +110,8 @@ export class PlayerComponent implements OnInit {
     document.title = "webradio - " + cannel.name;
     this.animateTitle();
 
-     
-  
+
+
     /* set local db */
     let currentTabIndex: number = 0;
     this.data.forEach((tab: Tab, i: number) => {
@@ -181,6 +185,17 @@ export class PlayerComponent implements OnInit {
     this.settings.volume = this._volume;
     const db = new LocalStorageDB('webradio');
     db.update(this.settings, 'settings');
+  }
+
+  swipe(obj: any, target: any, currentIndex: number, action = this.SWIPE_ACTION.DOWN) {
+    var cont = target.closest(".mat-tab-body-content");
+    if (action == this.SWIPE_ACTION.DOWN)
+      currentIndex = -currentIndex;
+
+    cont.scroll({
+      top:  cont.scrollTop + currentIndex,
+      behavior: 'smooth'
+    });
   }
 
 }

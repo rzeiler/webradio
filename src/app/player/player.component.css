@@ -81,3 +81,14 @@ audio {
     font-size: 110%;
     overflow: hidden;
 }
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.mat-tab-group.mat-primary {
+    flex: 1 0 auto;
+    height: 1px;
+}

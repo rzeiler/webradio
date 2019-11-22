@@ -5,12 +5,12 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build --prod",
-        "build-github": "ng build --prod --baseHref=/webradio/",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
         "server": "http-server -p 8080 -c-1 docs/",
-        "json-to-modul": "node transform.js"
+        "json-to-modul": "node transform.js",
+        "deploy": "firebase deploy"
     },
     "private": true,
     "dependencies": {

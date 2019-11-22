@@ -1,12 +1,32 @@
-<audio #player autoplay controls preload></audio>
-<mat-toolbar>
-    <mat-toolbar-row>
-        <div class="brand">
-            <i class="material-icons">radio</i> webradio
-        </div>
-        <small class="currentChannel">{{_currentChannelDisplay}}</small>
-        <span *ngIf="!(_showGithub | async)" class="example-spacer"></span>
-        <div class="navbar-hide-small">
+<div class="wrapper">
+    <audio #player autoplay controls preload></audio>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <div class="brand">
+                <i class="material-icons">radio</i> webradio
+            </div>
+            <small class="currentChannel">{{_currentChannelDisplay}}</small>
+            <span *ngIf="!(_showGithub | async)" class="example-spacer"></span>
+            <div class="navbar-hide-small">
+                <mat-slider min="0" max="1" step="0.1" (change)="onChange($event)" [value]="_volume" thumbLabel [disabled]="_disabledVolume"></mat-slider>
+                <button mat-raised-button (click)="setPlay()" [disabled]="_disabledPlay">
+          Play
+          <i class="material-icons" *ngIf="_clickedPlay">
+            play_arrow
+          </i>
+          <i class="material-icons" *ngIf="!_clickedPlay">
+            pause
+          </i>
+        </button>
+                <button mat-raised-button (click)="setStop()" [disabled]="_disabledStop">
+          Stop
+          <i class="material-icons">
+            stop
+          </i>
+        </button>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="navbar-show-small">
             <mat-slider min="0" max="1" step="0.1" (change)="onChange($event)" [value]="_volume" thumbLabel [disabled]="_disabledVolume"></mat-slider>
             <button mat-raised-button (click)="setPlay()" [disabled]="_disabledPlay">
         Play
@@ -23,36 +43,20 @@
           stop
         </i>
       </button>
-        </div>
-    </mat-toolbar-row>
-    <mat-toolbar-row class="navbar-show-small">
-        <mat-slider min="0" max="1" step="0.1" (change)="onChange($event)" [value]="_volume" thumbLabel [disabled]="_disabledVolume"></mat-slider>
-        <button mat-raised-button (click)="setPlay()" [disabled]="_disabledPlay">
-      Play
-      <i class="material-icons" *ngIf="_clickedPlay">
-        play_arrow
-      </i>
-      <i class="material-icons" *ngIf="!_clickedPlay">
-        pause
-      </i>
-    </button>
-        <button mat-raised-button (click)="setStop()" [disabled]="_disabledStop">
-      Stop
-      <i class="material-icons">
-        stop
-      </i>
-    </button>
-    </mat-toolbar-row>
-</mat-toolbar>
-<mat-tab-group #tabGroup>
-    <mat-tab label="{{category.name}}" *ngFor="let category of data">
-        <mat-selection-list (selectionChange)="handleSelection($event)">
-            <mat-list-option color="warn" matTooltip="{{channel.url}}" [value]="channel" *ngFor="let channel of category.channels">
-                <h3 matLine> {{channel.name}} </h3>
-                <p matLine class="info">Location: {{channel.location}}</p>
-                <p matLine class="info">City: {{channel.city}}</p>
-                <p matLine class="streamurl">Url: {{channel.url}}</p>
-            </mat-list-option>
-        </mat-selection-list>
-    </mat-tab>
-</mat-tab-group>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-tab-group #tabGroup>
+        <mat-tab label="{{category.name}}" *ngFor="let category of data">
+            <div class="holder" (swipeup)="swipe(this, $event.target,  $event.distance, $event.type)" (swipedown)="swipe(this,$event.target, $event.distance, $event.type)">
+                <mat-selection-list (selectionChange)="handleSelection($event)">
+                    <mat-list-option color="warn" matTooltip="{{channel.url}}" [value]="channel" *ngFor="let channel of category.channels">
+                        <h3 matLine> {{channel.name}} </h3>
+                        <p matLine class="info">Location: {{channel.location}}</p>
+                        <p matLine class="info">City: {{channel.city}}</p>
+                        <p matLine class="streamurl">Url: {{channel.url}}</p>
+                    </mat-list-option>
+                </mat-selection-list>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
