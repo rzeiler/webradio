@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1574448806035,
+  "timestamp": 1575491646095,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main-es2015.d9ce17ada607d41f1e93.js",
-        "/main-es5.8db951fc9b0c45450456.js",
+        "/main-es2015.3f1533aeb44f6e3a1c63.js",
+        "/main-es5.3f242714b9c91d22232e.js",
         "/manifest.json",
         "/polyfills-es2015.b0c10a77a53904da1ade.js",
         "/polyfills-es5.2bb4152059bfa7dece36.js",
         "/runtime-es2015.ca84bb782683800d794b.js",
         "/runtime-es5.8f24ffed1c06a6510470.js",
-        "/styles.8dff6034cbc4f97874ab.css"
+        "/styles.031a5e06cd6b4093fb2f.css"
       ],
       "patterns": []
     },
@@ -30,6 +30,7 @@
         "/assets/fonts/MaterialIcons-Regular.ttf",
         "/assets/fonts/MaterialIcons-Regular.woff",
         "/assets/fonts/MaterialIcons-Regular.woff2",
+        "/assets/fonts/RalewayDots-Regular.ttf",
         "/assets/github-circle-white-transparent.svg",
         "/assets/icons/icon-128x128.png",
         "/assets/icons/icon-144x144.png",
@@ -51,6 +52,7 @@
     "/assets/fonts/MaterialIcons-Regular.ttf": "fc05de31234e0090f7ddc28ce1b23af4026cb1da",
     "/assets/fonts/MaterialIcons-Regular.woff": "c6c953c2ccb2ca9abb21db8dbf473b5a435f0082",
     "/assets/fonts/MaterialIcons-Regular.woff2": "09963592e8c953cc7e14e3fb0a5b05d5042e8435",
+    "/assets/fonts/RalewayDots-Regular.ttf": "2b2bdb3499e2befbffe8a213a7e20eaf6a4e9f0a",
     "/assets/github-circle-white-transparent.svg": "5659974046466df7da6f95ee1a2241093f8499c1",
     "/assets/icons/icon-128x128.png": "8ccc141c98d34afd74c68b75666c8b8a662c4076",
     "/assets/icons/icon-144x144.png": "f3ad872a66e0da22ebb4c36d60d7cb80dbc0e654",
@@ -63,15 +65,15 @@
     "/assets/icons/icon-96x96.png": "0af6115897eced5097275051a563c336651174e4",
     "/assets/radio.svg": "3f84575e32a1dffa80ae37b14411046f8733548e",
     "/favicon.ico": "99dc8360c842cbbc5fdde06838b4779f5552b134",
-    "/index.html": "cfd52a5e9c317123e2236bcf91e500e33752b4dd",
-    "/main-es2015.d9ce17ada607d41f1e93.js": "1b4042e09ae15d6c2e458457c16976e8d5780866",
-    "/main-es5.8db951fc9b0c45450456.js": "9ead7f4c842d714b7846c4308edf666f84c3b737",
+    "/index.html": "358c42a504b8ec616e0d945f9fe786949537c5b2",
+    "/main-es2015.3f1533aeb44f6e3a1c63.js": "820e6a0fb1b192b195cc5f22c6601acf1db75bc7",
+    "/main-es5.3f242714b9c91d22232e.js": "780aa625c818463841eeb09a3e4590c92f079eaf",
     "/manifest.json": "71d728ddfdb3737d2cf5a65faf944acc806663c1",
     "/polyfills-es2015.b0c10a77a53904da1ade.js": "08c97940ba93ccc4121b85df6911d86011ef3fb8",
     "/polyfills-es5.2bb4152059bfa7dece36.js": "9d9b583788005b7e2dc51d2b965f7c09b9180c60",
     "/runtime-es2015.ca84bb782683800d794b.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "/runtime-es5.8f24ffed1c06a6510470.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
-    "/styles.8dff6034cbc4f97874ab.css": "2ba92cf038a186d7d051faaed0537e0b8c7ad630"
+    "/styles.031a5e06cd6b4093fb2f.css": "931befa8500859f477b76256440b96857811d16c"
   },
   "navigationUrls": [
     {

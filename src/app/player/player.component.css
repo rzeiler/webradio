@@ -27,10 +27,6 @@ audio {
     font-size: 120%;
 }
 
-.brand small {
-    font-size: 60%;
-}
-
 .brand .material-icons {
     font-size: 90%;
     line-height: 120%;
@@ -76,10 +72,25 @@ audio {
 }
 
 .currentChannel {
-    margin-left: 10px;
-    color: #c2185b;
-    font-size: 110%;
+    margin: 0 1vw;
+    color: #fff;
+    font-size: 200%;
     overflow: hidden;
+    flex-grow: 1;
+    font-family: 'RalewayDots', cursive;
+}
+
+@media (max-width: 720px) {
+    .currentChannel {
+        font-size: 100%;
+    }
+    .brand {
+        font-size: 0%;
+    }
+    .brand .material-icons {
+        font-size: 26px;
+        line-height: 56px;
+    }
 }
 
 .wrapper {
@@ -91,4 +102,14 @@ audio {
 .mat-tab-group.mat-primary {
     flex: 1 0 auto;
     height: 1px;
+}
+
+.timestemp {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin: 5px;
+    padding: 5px;
+    font-size: 60%;
+    background-color: rgba(0, 0, 0, .5);
 }

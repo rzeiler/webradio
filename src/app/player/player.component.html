@@ -2,7 +2,7 @@
     <audio #player autoplay controls preload></audio>
     <mat-toolbar>
         <mat-toolbar-row>
-            <div class="brand">
+            <div class="brand" (click)="reloadData()">
                 <i class="material-icons">radio</i> webradio
             </div>
             <small class="currentChannel">{{_currentChannelDisplay}}</small>
@@ -53,10 +53,10 @@
                         <h3 matLine> {{channel.name}} </h3>
                         <p matLine class="info">Location: {{channel.location}}</p>
                         <p matLine class="info">City: {{channel.city}}</p>
-                        <p matLine class="streamurl">Url: {{channel.url}}</p>
                     </mat-list-option>
                 </mat-selection-list>
             </div>
         </mat-tab>
     </mat-tab-group>
+    <span class="timestemp">{{timestemp}}</span>
 </div>

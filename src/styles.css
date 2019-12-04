@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+    font-family: RalewayDots;
+    src: url(assets/fonts/RalewayDots-Regular.ttf) format("truetype");
+}
+
+
+/* style */
+
 html,
 body {
     height: 100%;
@@ -9,9 +17,6 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-
-/* scrollbar */
 
 
 /* width */
@@ -51,5 +56,3 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -9,7 +9,7 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "server": "http-server -p 8080 -c-1 docs/",
-        "json-to-modul": "node transform.js",
+        "rebuild_radio_data": "node transform.js",
         "deploy": "firebase deploy"
     },
     "private": true,
@@ -30,6 +30,7 @@
         "http-server": "^0.11.1",
         "local-storage-db": "^1.0.0",
         "rxjs": "~6.4.0",
+        "sync-request": "^6.1.0",
         "tslib": "^1.10.0",
         "zone.js": "~0.9.1"
     },

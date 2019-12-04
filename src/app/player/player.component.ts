@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { categories } from '../channels';
+import * as data from '../channels.json';
 import { MatSelectionList, MatSelectionListChange, MatListOption } from '@angular/material/list';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { BehaviorSubject } from 'rxjs';
@@ -8,9 +8,6 @@ import { Channel } from '../models/channel';
 import { Tab } from '../models/tab';
 import { Settings } from '../models/settings';
 import { Meta } from '@angular/platform-browser';
-
-
-
 
 @Component({
   selector: 'app-player',
@@ -45,6 +42,7 @@ export class PlayerComponent implements OnInit {
 
   data: Tab[];
   settings: Settings;
+  timestemp: string = "";
 
   constructor(breakpointObserver: BreakpointObserver, public meta: Meta) {
     breakpointObserver.observe([
@@ -53,6 +51,13 @@ export class PlayerComponent implements OnInit {
     ]).subscribe(result => {
       this._showGithub.next(result.matches);
     });
+  }
+
+  reloadData() {
+    /* open db */
+    const db = new LocalStorageDB('webradio');
+    db.update(data.categories, 'categories');
+    location.reload();
   }
 
   handleSelection(event: MatSelectionListChange) {
@@ -87,7 +92,7 @@ export class PlayerComponent implements OnInit {
     }
 
     if (_categories === undefined) {
-      db.create('categories', categories as Tab[]);
+      db.create('categories', data.categories);
     }
     /* get */
     this.data = db.get('categories') as Tab[];
@@ -95,6 +100,8 @@ export class PlayerComponent implements OnInit {
     /* set default value */
     this._volume = this.settings.volume;
     this.tabGroup.selectedIndex = this.settings.tab;
+
+    this.timestemp = data.timestemp;
 
     this._player.nativeElement.volume = this._volume;
   }
@@ -154,13 +161,17 @@ export class PlayerComponent implements OnInit {
   }
 
   setPlay() {
+
     if (this._MatListOption != null)
       this._MatListOption._setSelected(true);
 
     this._clickedPlay = !this._clickedPlay;
+
     if (this._clickedPlay) {
       this._player.nativeElement.play();
+      this.animateTitle();
     } else {
+      clearInterval(this._interval);
       this._player.nativeElement.pause();
     }
   }
@@ -193,7 +204,7 @@ export class PlayerComponent implements OnInit {
       currentIndex = -currentIndex;
 
     cont.scroll({
-      top:  cont.scrollTop + currentIndex,
+      top: cont.scrollTop + currentIndex,
       behavior: 'smooth'
     });
   }
