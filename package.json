@@ -10,7 +10,7 @@
         "e2e": "ng e2e",
         "server": "http-server -p 8080 -c-1 docs/",
         "rebuild_radio_data": "node transform.js",
-        "deploy": "firebase deploy"
+        "deploy": "firebase deploy --only hosting:rzeiler-webradio"
     },
     "private": true,
     "dependencies": {

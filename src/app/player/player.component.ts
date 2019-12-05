@@ -90,12 +90,9 @@ export class PlayerComponent implements OnInit {
     if (_settings === undefined) {
       db.create('settings', { tab: 0, volume: 0.7 });
     }
-
-    if (_categories === undefined) {
-      db.create('categories', data.categories);
-    }
+    
     /* get */
-    this.data = db.get('categories') as Tab[];
+    this.data = data.categories as Tab[];
     this.settings = db.get('settings') as Settings
     /* set default value */
     this._volume = this.settings.volume;

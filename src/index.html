@@ -2,31 +2,40 @@
 <html lang="de">
 
 <head>
-  <meta charset="utf-8">
-  <title>webradio</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>webradio</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- icon in the highest resolution we need it for -->
-  <link rel="icon" sizes="192x192" href="assets/icons/icon-192x192.png">
-  <!-- reuse same icon for Safari -->
-  <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
-  <link rel="apple-touch-startup-image" href="assets/icons/icon-512x512.png">
+    <!-- icon in the highest resolution we need it for -->
+    <link rel="icon" sizes="192x192" href="assets/icons/icon-192x192.png">
+    <!-- reuse same icon for Safari -->
+    <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+    <link rel="apple-touch-startup-image" href="assets/icons/icon-512x512.png">
 
-  <!-- multiple icons for IE -->
-  <meta name="msapplication-square310x310logo" content="assets/icons/icon-192x192.png">
+    <!-- multiple icons for IE -->
+    <meta name="msapplication-square310x310logo" content="assets/icons/icon-192x192.png">
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.5.0/firebase-app.js"></script>
 
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#212121">
-  <meta http-equiv="Content-Security-Policy" content="media-src * ">
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.5.0/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#212121">
+    <meta http-equiv="Content-Security-Policy" content="media-src * ">
 
 </head>
 
 <body class="mat-app-background">
-  <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+    <app-root></app-root>
+    <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 
 </html>

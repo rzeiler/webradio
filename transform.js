@@ -1,13 +1,7 @@
 var request = require('sync-request');
 var fs = require('fs');
 var Url = require('url-parse');
-
 var filename = './src/app/channels.json';
-
-// var exists = fs.existsSync(filename);
-// if (exists)
-//     fs.unlinkSync(filename);
-
 var jsonData = JSON.parse(fs.readFileSync('./src/app/channels.json', 'utf-8'))
 
 var start = new Date();
@@ -42,7 +36,7 @@ try {
     var millis = Date.now() - start;
     console.log(`seconds elapsed = ${Math.floor(millis / 1000)}`);
 
-    jsonData.timestemp = `${start.getDate()}.${start.getMonth() + 1}.${start.getFullYear()} ${start.getHours()}:${start.getMinutes()}:${start.getSeconds()}`;
+    jsonData.timestemp = `Build ${start.getDate()}${start.getMonth() + 1}${start.getFullYear()}`;
 
     fs.writeFile(filename, JSON.stringify(jsonData), function(err) {
         if (err) throw err;
