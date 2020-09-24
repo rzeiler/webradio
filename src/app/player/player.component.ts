@@ -90,7 +90,7 @@ export class PlayerComponent implements OnInit {
     if (_settings === undefined) {
       db.create('settings', { tab: 0, volume: 0.7 });
     }
-    
+
     /* get */
     this.data = data.categories as Tab[];
     this.settings = db.get('settings') as Settings
@@ -105,6 +105,10 @@ export class PlayerComponent implements OnInit {
 
   onSelect(cannel) {
     clearInterval(this._interval);
+
+    var url = new URL(cannel.url);
+    document.domain = `${url.protocol}//${url.hostname}`;
+
     this._disabledVolume = false;
     this._disabledStop = false;
     this._disabledPlay = false;
@@ -114,7 +118,7 @@ export class PlayerComponent implements OnInit {
     document.title = "webradio - " + cannel.name;
     this.animateTitle();
 
-
+    
 
     /* set local db */
     let currentTabIndex: number = 0;
